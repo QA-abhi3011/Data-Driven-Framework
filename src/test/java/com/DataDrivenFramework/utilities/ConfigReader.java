@@ -17,7 +17,7 @@ public class ConfigReader {
 	}
 	
 	// Generic method to get any config value
-		public static String getProperty(String key) {
+		protected static String getProperty(String key) {
 			return prop.getProperty(key);
 		}
 
