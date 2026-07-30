@@ -17,10 +17,16 @@ public class ScreenshotUtils {
 		WebDriver driver = DriverFactory.getDriver();
 		
 		//Create timestamp
-		String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss\"").format(new Date());
+		String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
 		
 		//Screenshot Folder Path
 		String screenshotDir = System.getProperty("user.dir") + "/screenshots/";
+		
+		// Create the directory if it doesn't exist
+		File directory = new File(screenshotDir);
+		if (!directory.exists()) {
+		    directory.mkdirs();
+		}
 		
 		//Full Screenshot Path
 		String fullScreenshotPath = screenshotDir + testName + "_" + timestamp + ".png";
