@@ -17,8 +17,6 @@ public class BrowserUtils {
 	
 	public static void initBrowser() {
 		
-		ReportingFactory.getTest().info("Navigating to " + ConfigReader.getProperty("browser") + " browser");
-		
 		// Read browser name from config.properties
 		String browser = ConfigReader.getProperty("browser");
 		
@@ -51,7 +49,7 @@ public class BrowserUtils {
 				}
 				
 				// Launch Chrome browser
-				driver = new ChromeDriver();
+				driver = new ChromeDriver(chromeOptions);
 				break;
 				
 			case "edge":
@@ -70,7 +68,7 @@ public class BrowserUtils {
                     edgeOptions.addArguments("--inprivate");
                 }
 
-				driver = new EdgeDriver();
+				driver = new EdgeDriver(edgeOptions);
 				break;
 				
 			case "firefox":
@@ -89,7 +87,7 @@ public class BrowserUtils {
                     firefoxOptions.addArguments("-private");
                 }
                 
-				driver = new FirefoxDriver();
+				driver = new FirefoxDriver(firefoxOptions);
 				break;
 				
             default:

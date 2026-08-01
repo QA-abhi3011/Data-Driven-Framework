@@ -27,6 +27,9 @@ public class ExtentListener implements ITestListener {
 		
 		ReportingFactory.setTest(test);
 		
+	    ReportingFactory.getTest().info("Launching " + ConfigReader.getProperty("browser") + " browser");
+	    
+	    ReportingFactory.getTest().info("Navigating to: " + ConfigReader.getProperty("baseUrl"));
 	}
 	
 	@Override

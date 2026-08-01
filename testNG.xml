@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Automation Test Suite">
+
+	<listeners>
+		<listener class-name="com.DataDrivenFramework.utilities.ExtentListener"></listener>
+	</listeners>
+	
+	<test name="RegressionTest">
+		<classes>
+			<class name="com.DataDrivenFramework.testCases.LoginTest"/>
+		</classes>
+	</test>
+	
+</suite> 

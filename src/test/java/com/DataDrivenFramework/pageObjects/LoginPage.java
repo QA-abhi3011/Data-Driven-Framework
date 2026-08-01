@@ -48,6 +48,7 @@ public class LoginPage extends BasePage {
 //-------------------------------------------------Business Actions---------------------------------------------------------------
 	
 	public void login(String username, String password) {
+			
 		navigateSampleApp();
 		enterUserName(username);
 		enterPassword(password);
