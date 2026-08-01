@@ -17,6 +17,8 @@ public class BrowserUtils {
 	
 	public static void initBrowser() {
 		
+		ReportingFactory.getTest().info("Navigating to " + ConfigReader.getProperty("browser") + " browser");
+		
 		// Read browser name from config.properties
 		String browser = ConfigReader.getProperty("browser");
 		

@@ -11,13 +11,16 @@ public class ConfigReader {
 	static {
 		try {
 			FileInputStream file = new FileInputStream(System.getProperty("user.dir") + "/src/test/resources/Config.properties");
+			prop = new Properties();
+			prop.load(file);
+			
 		}catch(Exception e){
 			e.printStackTrace();
 		}
 	}
 	
 	// Generic method to get any config value
-		protected static String getProperty(String key) {
+		public static String getProperty(String key) {
 			return prop.getProperty(key);
 		}
 
