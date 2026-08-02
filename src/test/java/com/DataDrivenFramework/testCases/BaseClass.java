@@ -2,14 +2,12 @@ package com.DataDrivenFramework.testCases;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
+
 
 import com.DataDrivenFramework.utilities.BrowserUtils;
 import com.DataDrivenFramework.utilities.ConfigReader;
 import com.DataDrivenFramework.utilities.DriverFactory;
-import com.DataDrivenFramework.utilities.ExtentListener;
-import com.DataDrivenFramework.utilities.ReportingFactory;
-import com.DataDrivenFramework.utilities.ReportingManager;
+
 
 
 

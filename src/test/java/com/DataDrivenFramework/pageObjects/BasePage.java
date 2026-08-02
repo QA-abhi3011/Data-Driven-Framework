@@ -1,10 +1,9 @@
 package com.DataDrivenFramework.pageObjects;
 
 import java.time.Duration;
-import java.util.concurrent.TimeoutException;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -34,6 +33,10 @@ public class BasePage {
 		return wait.until(ExpectedConditions.elementToBeClickable(locator));
 	}
 	
+	protected WebElement waitForPresence(By locator) {
+		return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+	}
+	
 	
 	/* ================
 	 * COMMON ACTIONS
@@ -54,10 +57,10 @@ public class BasePage {
 		element.sendKeys(text);
 	}
 	
-	protected void getText(By locator, String elementName) {
+	protected String getText(By locator, String elementName) {
 		ReportingFactory.getTest().info("Extracting text for " + elementName);
 		WebElement element = waitForClickable(locator);
-		element.getText();
+		return element.getText();
 	}
 	
     protected boolean isDisplayed(By locator, String elementName) {
@@ -68,5 +71,22 @@ public class BasePage {
 		}catch(Exception e) {
 			return false;
 		}
+    }
+    
+    protected void switchToFrame(By locator) {
+    	WebElement element = waitForPresence(locator);
+    	driver.switchTo().frame(element);
+    	
+    }
+    
+    protected void switchBackToDefault() {
+    	driver.switchTo().defaultContent();
+    }
+    
+    protected void enableElement(By locator) {
+    	WebElement element = waitForPresence(locator);
+    	JavascriptExecutor js = (JavascriptExecutor)driver;
+    	
+    	js.executeScript("arguments[0].style.display = 'block';", element);
     }
 }

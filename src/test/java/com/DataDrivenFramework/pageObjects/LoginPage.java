@@ -23,6 +23,9 @@ public class LoginPage extends BasePage {
 	//Login Btn Locator
 	private By btnLoginLocator = By.id("login");
 	
+	//Login Status Locator
+	private By txtLoginStatusLocator = By.id("loginstatus");
+	
 //------------------------------------------------Methods------------------------------------------------------------------
 	
 	//Methods to perform login action
@@ -53,5 +56,9 @@ public class LoginPage extends BasePage {
 		enterUserName(username);
 		enterPassword(password);
 		clickLoginBtn();
+	}
+	
+	public String loginStatus() {
+		return getText(txtLoginStatusLocator, "Login Status");
 	}
 }

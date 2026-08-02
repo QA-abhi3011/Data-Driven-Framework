@@ -9,7 +9,8 @@
 	<test name="RegressionTest">
 		<classes>
 			<class name="com.DataDrivenFramework.testCases.LoginTest"/>
+			<class name="com.DataDrivenFramework.testCases.FileUploadTest"/>
 		</classes>
 	</test>
-	
+
 </suite> 
