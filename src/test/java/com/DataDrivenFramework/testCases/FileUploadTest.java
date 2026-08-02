@@ -5,14 +5,14 @@ import org.testng.annotations.Test;
 
 import com.DataDrivenFramework.pageObjects.FileUploadPage;
 import com.DataDrivenFramework.utilities.DriverFactory;
-import com.DataDrivenFramework.utilities.RetryAnalzyer;
+import com.DataDrivenFramework.utilities.RetryAnalyzer;
 import com.DataDrivenFramework.utilities.TestDataProvider;
 
 public class FileUploadTest extends BaseClass{
 	
 	@Test(dataProvider="FileUploadData", 
 		dataProviderClass=TestDataProvider.class,
-		retryAnalyzer=RetryAnalzyer.class,
+		retryAnalyzer=RetryAnalyzer.class,
 		description="Verify file upload functionality using button")
 	public void uploadFileTest(String fileName) {
 			
@@ -25,6 +25,14 @@ public class FileUploadTest extends BaseClass{
 		String statusTxt = fp.getUploadStatus();
 		
 		Assert.assertTrue(statusTxt.contains(" file(s) selected"), "File Upload successfull");
+		
+	}
+	
+	@Test(dataProvider="FileUploadData",
+		  dataProviderClass=TestDataProvider.class,
+		  retryAnalyzer=RetryAnalyzer.class,
+		  description="Verify file upload functionality using drag & drop")
+	public void uploadFileDragNDropTest() {
 		
 	}
 

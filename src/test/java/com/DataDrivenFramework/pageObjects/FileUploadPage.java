@@ -47,15 +47,16 @@ public class FileUploadPage extends BasePage {
 		switchToFileUploadArea();
 		enableFileUploadBtn();
 		enterFile(filePath);
-		
 
 	}
-	
+
 	public void switchBackToDefault() {
 		switchBackToDefault();
 	}
 
 	public String getUploadStatus() {
-			return getText(staticTxtSuccessLocator, "file upload status");
-		}
+		return getText(staticTxtSuccessLocator, "file upload status");
+	}
+	
+	
 }

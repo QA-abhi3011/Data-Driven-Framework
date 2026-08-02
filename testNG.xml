@@ -10,6 +10,7 @@
 		<classes>
 			<class name="com.DataDrivenFramework.testCases.LoginTest"/>
 			<class name="com.DataDrivenFramework.testCases.FileUploadTest"/>
+			<class name="com.DataDrivenFramework.testCases.DynamicTableTest"/>
 		</classes>
 	</test>
 

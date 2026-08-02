@@ -1,7 +1,9 @@
 package com.DataDrivenFramework.pageObjects;
 
 import java.time.Duration;
+import java.util.List;
 
+import org.jspecify.annotations.Nullable;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -35,6 +37,10 @@ public class BasePage {
 	
 	protected WebElement waitForPresence(By locator) {
 		return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+	}
+	
+	protected List<WebElement> waitForVisibilityOfElements(By locator) {
+		return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
 	}
 	
 	
