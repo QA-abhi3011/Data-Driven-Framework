@@ -18,7 +18,7 @@ public class BrowserUtils {
 	public static void initBrowser() {
 		
 		// Read browser name from config.properties
-		String browser = ConfigReader.getProperty("browser");
+		String browser = ConfigReader.getBrowser();
 		
 		// Read headless mode flag from config
 		boolean headless = Boolean.parseBoolean(ConfigReader.getProperty("headless"));
