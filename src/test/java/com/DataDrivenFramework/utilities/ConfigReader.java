@@ -7,10 +7,18 @@ public class ConfigReader {
 	
 	private static Properties prop;
 	
+	
 	//Load config file once
 	static {
-		try {
-			FileInputStream file = new FileInputStream(System.getProperty("user.dir") + "/src/test/resources/Config.properties");
+		String env = System.getProperty("env");
+
+		if (env == null) {
+		    env = "QA";
+		}
+		
+	
+		try {		
+			FileInputStream file = new FileInputStream(System.getProperty("user.dir") + "/src/test/resources/Config-"+ env+".properties");
 			prop = new Properties();
 			prop.load(file);
 			
