@@ -27,13 +27,5 @@ public class FileUploadTest extends BaseClass{
 		Assert.assertTrue(statusTxt.contains(" file(s) selected"), "File Upload successfull");
 		
 	}
-	
-	@Test(dataProvider="FileUploadData",
-		  dataProviderClass=TestDataProvider.class,
-		  retryAnalyzer=RetryAnalyzer.class,
-		  description="Verify file upload functionality using drag & drop")
-	public void uploadFileDragNDropTest() {
-		
-	}
 
 }
