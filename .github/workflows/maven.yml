@@ -33,7 +33,7 @@ jobs:
           echo "Test resources:"
           ls -la src/test/resources    
     - name: Build and Execute Tests
-      run: mvn clean test -Denv=CI
+      run: mvn clean test -Denv=QA
 
     - name: Upload Test Reports
       if: always()
