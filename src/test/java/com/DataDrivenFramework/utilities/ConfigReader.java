@@ -9,8 +9,6 @@ public class ConfigReader {
 
 	// Load config file once
 	static {
-		
-		prop = new Properties();
 		String env = System.getProperty("env");
 		if (env == null) {
 			env = "QA";
@@ -19,12 +17,7 @@ public class ConfigReader {
 		try {
 			FileInputStream file = new FileInputStream(
 					System.getProperty("user.dir") + "/src/test/resources/Config-" + env + ".properties");
-			
-			String path = System.getProperty("user.dir")
-			        + "/src/test/resources/Config-" + env + ".properties";
 
-			System.out.println("Loading config from: " + path);
-			
 			prop.load(file);
 
 		} catch (Exception e) {
