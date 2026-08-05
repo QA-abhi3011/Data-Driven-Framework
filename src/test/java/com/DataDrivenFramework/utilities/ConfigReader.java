@@ -10,7 +10,6 @@ public class ConfigReader {
 	// Load config file once
 	static {
 		String env = System.getProperty("env");
-
 		if (env == null) {
 			env = "QA";
 		}
