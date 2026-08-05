@@ -21,19 +21,9 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-        cache: maven
-    - name: Show project structure
-      run: |
-          echo "Current directory:"
-          pwd
-          echo ""
-          echo "Project files:"
-          ls -R
-          echo ""
-          echo "Test resources:"
-          ls -la src/test/resources    
+        cache: maven  
     - name: Build and Execute Tests
-      run: mvn clean test -Denv=QA
+      run: mvn clean test -Denv=CI
 
     - name: Upload Test Reports
       if: always()
