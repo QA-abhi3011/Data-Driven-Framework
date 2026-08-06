@@ -20,7 +20,8 @@ public class ScreenshotUtils {
 		String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
 		
 		//Screenshot Folder Path
-		String screenshotDir = System.getProperty("user.dir") + "/screenshots/";
+		String reportDirectory = System.getProperty("user.dir") + "/reports/";
+		String screenshotDir = reportDirectory + "screenshot/";
 		
 		// Create the directory if it doesn't exist
 		File directory = new File(screenshotDir);
@@ -29,7 +30,8 @@ public class ScreenshotUtils {
 		}
 		
 		//Full Screenshot Path
-		String fullScreenshotPath = screenshotDir + testName + "_" + timestamp + ".png";
+		String screenshotName = testName + "_" + timestamp + ".png";
+		String fullScreenshotPath = screenshotDir + screenshotName;
 		
 		try {
 			//capturing screenshot
@@ -41,7 +43,7 @@ public class ScreenshotUtils {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		
-		return fullScreenshotPath;
+			
+		return "screenshots/" + screenshotName;
 	}
 }
