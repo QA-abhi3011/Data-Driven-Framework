@@ -51,7 +51,10 @@ jobs:
       - name: Prepare GitHub Pages
         if: always()
         run: |
-          latest=$(find reports -name "*.html" | sort | tail -1)
+          latest=$(find reports -name "*.html" ! -name "index.html" -printf "%T@ %p\n" \
+          | sort -nr \
+          | head -1 \
+          | cut -d' ' -f2-)
           echo "Latest report: $latest"
           cp "$latest" reports/index.html
 
