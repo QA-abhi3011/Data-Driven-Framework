@@ -55,6 +55,8 @@ jobs:
           | sort -nr \
           | head -1 \
           | cut -d' ' -f2-)
+          echo "Latest report: $latest"
+          cp "$latest" reports/index.html
 
       - name: Upload GitHub Pages Artifact
         if: always()
