@@ -3,9 +3,9 @@ name: Data Driven Framework
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "publishreports" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "publishreports" ]
   schedule:
     - cron: 00 18 * * *
 
