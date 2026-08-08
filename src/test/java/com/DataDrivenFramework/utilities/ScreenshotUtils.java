@@ -21,7 +21,7 @@ public class ScreenshotUtils {
 		
 		//Screenshot Folder Path
 		String reportDirectory = System.getProperty("user.dir") + "/reports/";
-		String screenshotDir = reportDirectory + "screenshot/";
+		String screenshotDir = reportDirectory + "screenshots/";
 		
 		// Create the directory if it doesn't exist
 		File directory = new File(screenshotDir);
