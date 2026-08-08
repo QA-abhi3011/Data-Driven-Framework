@@ -5,6 +5,8 @@ on:
     workflows: ["Data Driven Framework"]
     types:
       - completed
+    branches:
+      - publishreports
 
 permissions:
   contents: read
