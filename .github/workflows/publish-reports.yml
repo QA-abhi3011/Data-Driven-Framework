@@ -1,7 +1,7 @@
 name: Publish Extent Report
 
 on:
-  workflow_run:
+  workflow_run: data-driven-framework.yml
     workflows: ["Data Driven Framework"]
     types:
       - completed
@@ -28,7 +28,7 @@ jobs:
       - name: Download Report Artifact
         uses: dawidd6/action-download-artifact@v9
         with:
-          workflow: selenium-framework.yml
+          run_id: ${{ github.event.workflow_run.id }}
           workflow_conclusion: success
           name: Test-Reports
           path: reports
